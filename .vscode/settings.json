@@ -6,5 +6,6 @@
         "Rengoku",
         "Runnin",
         "Ufotable"
-    ]
+    ],
+    "cmake.configureOnOpen": true
 }

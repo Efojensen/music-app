@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:music_player/pages/song_page.dart';
 import 'package:music_player/providers/playlist_provider.dart';
 import 'package:provider/provider.dart';
-
 import '../components/drawer.dart';
 import '../models/song.dart';
 
@@ -14,10 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    late final dynamic playlistProvider;
-
+  late final PlaylistProvider playlistProvider;
     @override
     void initState() {
       super.initState();
@@ -30,6 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => const SongPage()));
     }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
