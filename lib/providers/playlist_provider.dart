@@ -7,7 +7,7 @@ class PlaylistProvider extends ChangeNotifier{
       songName: "Runnin'",
       thumbnailPath: "assets/images/thumb-1920-82029.jpg",
       songPath: "assets/music/Adam_Lambert_-_Runnin_Naruto_(mp3.pm).mp3",
-      songArtiste: "Some guy"
+      songArtiste: "Adam Lambert"
     ),
     Song(
       songName: "AOT Epic Orchestral Cover",
@@ -16,7 +16,7 @@ class PlaylistProvider extends ChangeNotifier{
       songArtiste: "Ashes on The Fire"
     ),
     Song(
-      songName: "Rengoku Theme Epic Muc",
+      songName: "Rengoku Theme Epic Music",
       thumbnailPath: "assets/images/1115011.png",
       songPath: "assets/music/Demon Slayer Rengoku Theme  EPIC MUSIC MIX (Set Your Heart Ablaze).mp3",
       songArtiste: "Ufotable"
