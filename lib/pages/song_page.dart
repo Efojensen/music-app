@@ -3,6 +3,8 @@ import 'package:music_player/providers/playlist_provider.dart';
 import 'package:provider/provider.dart';
 import '../components/neu_box.dart';
 
+
+// How the hell do I GET THIS TO WORK!!!???!?!?!??!
 class SongPage extends StatelessWidget {
   const SongPage({super.key});
   @override
