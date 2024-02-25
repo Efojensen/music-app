@@ -76,9 +76,13 @@ class SongPage extends StatelessWidget {
                   child: Slider(
                     activeColor: Colors.blue,
                     min: 0,
-                    max: 200,
-                    value: 130,
-                    onChanged: (value){}
+                    max: value.totalDuration.inSeconds.toDouble(),
+                    value: value.currentDuration.inSeconds.toDouble(),
+                    onChanged: (double double){
+
+                    }, onChangeEnd: (double double){
+                      value.seek(Duration(seconds:double.toInt()));
+                    }
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -86,7 +90,7 @@ class SongPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: GestureDetector(
-                        onTap: (){},
+                        onTap: value.playPreviousSong,
                         child: const NeuBox(
                           child: Icon(Icons.skip_previous),
                         ),
@@ -96,16 +100,16 @@ class SongPage extends StatelessWidget {
                     Expanded(
                       flex: 2,
                       child: GestureDetector(
-                        onTap: (){},
-                        child: const NeuBox(
-                          child: Icon(Icons.play_arrow),
+                        onTap: value.pauseOrResume,
+                        child: NeuBox(
+                          child: Icon(value.isPlaying ? Icons.pause : Icons.play_arrow),
                         ),
                       )
                     ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: GestureDetector(
-                        onTap: (){},
+                        onTap: value.playNextSong,
                         child: const NeuBox(
                           child: Icon(Icons.skip_next),
                         ),
