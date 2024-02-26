@@ -3,10 +3,15 @@ import 'package:music_player/providers/playlist_provider.dart';
 import 'package:provider/provider.dart';
 import '../components/neu_box.dart';
 
-
-// How the hell do I GET THIS TO WORK!!!???!?!?!??!
 class SongPage extends StatelessWidget {
   const SongPage({super.key});
+
+  String formatTime(Duration duration) {
+    String twoDigitSeconds = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+    String formattedTime = "${duration.inMinutes}:$twoDigitSeconds";
+
+    return formattedTime;
+  }
   @override
   Widget build(BuildContext context) {
     return Consumer<PlaylistProvider>(
@@ -59,15 +64,15 @@ class SongPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("0:00"),
-                      Icon(Icons.shuffle),
-                      Icon(Icons.repeat),
-                      Text("3:49")
+                      Text(formatTime(value.currentDuration)),
+                      const Icon(Icons.shuffle),
+                      const Icon(Icons.repeat),
+                      Text(formatTime(value.totalDuration))
                     ]
                   ),
                 ),
